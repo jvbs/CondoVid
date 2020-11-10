@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-
+use \GuzzleHttp\Client;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +19,12 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $client = new Client();
+    $response = $client->get('http://localhost:5005/api/condovid');
+    $body = $response->getBody()->getContents();
+    $data = json_decode($body);
+
+    return view('dashboard', compact('data'));
 })->name('dashboard');
 
 

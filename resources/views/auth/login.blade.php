@@ -11,6 +11,8 @@
                 {{ session('status') }}
             </div>
         @endif
+        
+        <h2>Condovid</h2>
 
         <div class="grid grid-flow-col auto-cols-max flex items-center">
             <div class="inline-block">

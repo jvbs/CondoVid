@@ -13,13 +13,50 @@ class CreateCondoVidsTable extends Migration
      */
     public function up()
     {
-        Schema::create('condo_vids', function (Blueprint $table) {
+        $tableName = 'condo_vids';
+
+        Schema::create($tableName, function (Blueprint $table) {
             $table->id();
             $table->String('title');
             $table->String('conteudo');
             $table->String('autor');
             $table->timestamps();
         });
+
+        DB::table($tableName)->insert(
+            array(
+                [
+                    'title' => 'Regra 1',
+                    'conteudo' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolorum, repellendus animi harum exercitationem mollitia qui consequatur corrupti praesentium, officia esse perferendis repellat totam cumque vitae! Ea beatae ullam dolorum.',
+                    'autor' => 'João Vitor Barbosa Souza'
+                ],
+                [
+                    'title' => 'Regra 2',
+                    'conteudo' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolorum, repellendus animi harum exercitationem mollitia qui consequatur corrupti praesentium, officia esse perferendis repellat totam cumque vitae! Ea beatae ullam dolorum.',
+                    'autor' => 'João Vitor Barbosa Souza'   
+                ],
+                [
+                    'title' => 'Regra 2',
+                    'conteudo' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolorum, repellendus animi harum exercitationem mollitia qui consequatur corrupti praesentium, officia esse perferendis repellat totam cumque vitae! Ea beatae ullam dolorum.',
+                    'autor' => 'João Vitor Barbosa Souza'   
+                ],
+                [
+                    'title' => 'Regra 2',
+                    'conteudo' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolorum, repellendus animi harum exercitationem mollitia qui consequatur corrupti praesentium, officia esse perferendis repellat totam cumque vitae! Ea beatae ullam dolorum.',
+                    'autor' => 'João Vitor Barbosa Souza'   
+                ],
+                [
+                    'title' => 'Regra 2',
+                    'conteudo' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolorum, repellendus animi harum exercitationem mollitia qui consequatur corrupti praesentium, officia esse perferendis repellat totam cumque vitae! Ea beatae ullam dolorum.',
+                    'autor' => 'João Vitor Barbosa Souza'   
+                ],
+                [
+                    'title' => 'Regra 2',
+                    'conteudo' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, dolorum, repellendus animi harum exercitationem mollitia qui consequatur corrupti praesentium, officia esse perferendis repellat totam cumque vitae! Ea beatae ullam dolorum.',
+                    'autor' => 'João Vitor Barbosa Souza'   
+                ]
+            )
+        );
     }
 
     /**
